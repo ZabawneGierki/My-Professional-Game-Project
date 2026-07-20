@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuickAccessSelector : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class QuickAccessSelector : MonoBehaviour
 
     [SerializeField] private List<int> numbers = new List<int>();
     [SerializeField] private int[] quickAccessSlots = new int[SlotCount];
+
+    [SerializeField] Image[] images;
 
     private int currentStartIndex;
 
