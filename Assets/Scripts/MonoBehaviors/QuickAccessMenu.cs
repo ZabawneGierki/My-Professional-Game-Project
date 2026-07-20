@@ -3,31 +3,25 @@ using UnityEngine.InputSystem;
 
 public class QuickAccessMenu : MonoBehaviour
 {
-    public enum Directions
-    {
-        Up,
-        Down,
-        Left,
-        Right
-    }
+  
     public ItemSpellEffect up, down, right, left; // assign starting minispells that can be changed in the future
 
     [SerializeField] private InputActionReference quickAccessMenuInputAction; // assign the input action for opening the quick access menu
 
-    public void AssignMiniSpell(Directions direction, ItemSpellEffect miniSpell)
+    public void AssignMiniSpell(Direction direction, ItemSpellEffect miniSpell)
     {
         switch (direction)
         {
-            case Directions.Up:
+            case Direction.Up:
                 up = miniSpell;
                 break;
-            case Directions.Down:
+            case Direction.Down:
                 down = miniSpell;
                 break;
-            case Directions.Left:
+            case Direction.Left:
                 left = miniSpell;
                 break;
-            case Directions.Right:
+            case Direction.Right:
                 right = miniSpell;
                 break;
         }
