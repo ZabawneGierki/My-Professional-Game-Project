@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40a30a49bee325c4aa10dd7d49d31add, type: 3}
-  m_Name: HealingPotion
-  m_EditorClassIdentifier: Assembly-CSharp::Potion
+  m_Name: Cirno
+  m_EditorClassIdentifier: Assembly-CSharp::Usable
   itemName: 0
-  itemSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  SellValue: 20
+  itemSprite: {fileID: 21300000, guid: 618563030b8f7034d995e6f64061cb4b, type: 3}
+  SellValue: 0
+  Effect: {fileID: 0}
