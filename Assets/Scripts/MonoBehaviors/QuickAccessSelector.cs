@@ -1,15 +1,16 @@
+using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System;
 
-public class QuickAccessSelector : MonoBehaviour
+public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private const int SlotCount = 5;
 
     [SerializeField] private List<Usable> usables = new List<Usable>();
-    [SerializeField] private Usable[] quickAccessSlots = new Usable[SlotCount];
+    private Usable[] quickAccessSlots = new Usable[SlotCount];
     [SerializeField] private Image[] images = new Image[SlotCount];
 
     [Header("Scrolling")]
@@ -219,5 +220,33 @@ public class QuickAccessSelector : MonoBehaviour
         {
             Array.Resize(ref images, SlotCount);
         }
+    }
+    public Usable GetCentralItem()
+    {
+        if (usables == null || usables.Count == 0)
+        {
+            return null;
+        }
+
+        int centralSlotIndex = SlotCount / 2;
+        int usableIndex = (currentStartIndex + centralSlotIndex) % usables.Count;
+
+        return usables[usableIndex];
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        Debug.Log("Selected");
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+
+        Debug.Log("Deselected");
+    }
+
+    public void OnClick()
+    {
+        Debug.Log("Clicked.");
     }
 }
