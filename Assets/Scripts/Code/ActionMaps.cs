@@ -6,8 +6,8 @@ public static class ActionMaps
     {
         public const string PlayerActionMap = "Player";
         public const string Move = "Move";
-        public const string Jump = "Player/Jump";
-        public const string Shoot = "Player/Shoot";
+        public const string Jump = "Jump";
+        public const string Shoot = "Shoot";
     }
 
     public static class UI
@@ -16,5 +16,7 @@ public static class ActionMaps
         public const string Navigate = "Navigate";
         public const string Select = "Select";
         public const string Back = "Back";
+        public const string Previous = "Previous";
+        public const string Next = "Next";
     }
 }
