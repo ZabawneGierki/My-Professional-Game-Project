@@ -3,10 +3,11 @@ using UnityEngine.InputSystem;
 
 public class QuickAccessMenu : MonoBehaviour
 {
-  
-    public ItemSpellEffect up, down, right, left; // assign starting minispells that can be changed in the future
+    public ItemSpellEffect up, down, right, left;
 
-    [SerializeField] private InputActionReference quickAccessMenuInputAction; // assign the input action for opening the quick access menu
+    [SerializeField] private string quickAccessMenuActionName = "QuickAccess";
+
+    private InputAction quickAccessMenuAction;
 
     public void AssignMiniSpell(Direction direction, ItemSpellEffect miniSpell)
     {
@@ -27,44 +28,67 @@ public class QuickAccessMenu : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (InputManager.Instance == null)
+        {
+            Debug.LogError("An InputManager instance is required.", this);
+            return;
+        }
 
+        quickAccessMenuAction = InputManager.Instance.inputActions.FindAction(
+            quickAccessMenuActionName,
+            true);
+
+        SubscribeToInput();
+    }
 
     private void OnEnable()
     {
-        quickAccessMenuInputAction.action.performed += OnQuickAccessMenuPerformed;
+        SubscribeToInput();
     }
-
-
 
     private void OnDisable()
     {
-        quickAccessMenuInputAction.action.performed -= OnQuickAccessMenuPerformed;
+        if (quickAccessMenuAction != null)
+        {
+            quickAccessMenuAction.performed -= OnQuickAccessMenuPerformed;
+        }
     }
 
+    private void SubscribeToInput()
+    {
+        if (quickAccessMenuAction == null)
+        {
+            return;
+        }
+
+        quickAccessMenuAction.performed -= OnQuickAccessMenuPerformed;
+        quickAccessMenuAction.performed += OnQuickAccessMenuPerformed;
+    }
 
     private void OnQuickAccessMenuPerformed(InputAction.CallbackContext context)
     {
         Vector2 direction = context.ReadValue<Vector2>();
-        // Handle the direction input
-        
-        if (direction.y == 1f)
-        {
-            up.Cast();
-        }
-        else if (direction.y == 1f)
-        {
-            down.Cast();
-        }
-        else if (direction.x == 1f)
-        {
-            left.Cast();
-        }
-        else if (direction.x == 1f)
-        {
-            right.Cast();
-        }
 
+        if (Mathf.Abs(direction.y) >= Mathf.Abs(direction.x))
+        {
+            if (direction.y > 0f)
+            {
+                up?.Cast();
+            }
+            else if (direction.y < 0f)
+            {
+                down?.Cast();
+            }
+        }
+        else if (direction.x < 0f)
+        {
+            left?.Cast();
+        }
+        else if (direction.x > 0f)
+        {
+            right?.Cast();
+        }
     }
-
-     
 }

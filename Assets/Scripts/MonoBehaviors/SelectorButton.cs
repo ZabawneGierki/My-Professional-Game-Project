@@ -3,15 +3,12 @@ using UnityEngine.UI;
 
 public class SelectorButton : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] Button QuickAccessSelector;
+     
 
-    // Update is called once per frame
-    void Update()
+    public void OnClick()
     {
-        
+        // just select the button.
+        QuickAccessSelector.Select();
     }
 }

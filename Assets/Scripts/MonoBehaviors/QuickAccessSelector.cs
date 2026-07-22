@@ -3,11 +3,15 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private const int SlotCount = 5;
+
+
+    [SerializeField] Button senderButton; // a button we will back to after selecting the Usable.
 
     [SerializeField] private List<Usable> usables = new List<Usable>();
     private Usable[] quickAccessSlots = new Usable[SlotCount];
@@ -17,6 +21,8 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
     [SerializeField, Min(0.01f)] private float animationDuration = 0.25f;
     [SerializeField, Min(0f)] private float imageSpacing;
     [SerializeField] private Ease animationEase = Ease.OutCubic;
+
+    [SerializeField] Direction direction; // the direction of this quick access selector. There are 4 of them.
 
     private int currentStartIndex;
     private Sequence scrollSequence;
@@ -37,6 +43,22 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
 
         scrollSequence = null;
         isScrolling = false;
+    }
+
+
+    public void OnNavigate(InputAction.CallbackContext context)
+    {
+        Vector2 direction = context.ReadValue<Vector2>();
+        if (direction.y > 0f)
+        {
+             
+            GoRight();
+        }
+        else if (direction.y < 0f)
+        {
+            GoLeft();
+
+        }
     }
 
     [ContextMenu("Go Left")]
@@ -236,13 +258,20 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
 
     public void OnSelect(BaseEventData eventData)
     {
-        Debug.Log("Selected");
+        // disable nav
+        
+
+        // hook the function to nav
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
+        // reenable nav
 
-        Debug.Log("Deselected");
+        // dehook the function from nav
+        
+        // select the sender button
+         
     }
 
     public void OnClick()

@@ -672,6 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c08f17f34e15c748a5904cde88cf1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuickAccessSelector
+  senderButton: {fileID: 0}
   usables:
   - {fileID: 11400000, guid: 7289b5fb5d29e894cb20ee5bcab0d6fc, type: 2}
   - {fileID: 11400000, guid: a1b4a20617785e24c83873999f933d3b, type: 2}
@@ -687,6 +688,7 @@ MonoBehaviour:
   animationDuration: 0.75
   imageSpacing: 0
   animationEase: 9
+  direction: 0
 --- !u!114 &331053182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1167,7 @@ MonoBehaviour:
   down: {fileID: 11400000, guid: 387dba7c736b7b349bdb7379412bb874, type: 2}
   right: {fileID: 11400000, guid: b80c27b46b7270845a2c6690c732cb63, type: 2}
   left: {fileID: 11400000, guid: ae33abdea017a3f40819100779d43805, type: 2}
-  quickAccessMenuInputAction: {fileID: 3311766289769488107, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  quickAccessMenuActionName: QuickAccess
 --- !u!1 &1074492873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  uiInputModule: {fileID: 0}
 --- !u!1 &1141136203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,6 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c08f17f34e15c748a5904cde88cf1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuickAccessSelector
+  senderButton: {fileID: 0}
   usables: []
   images:
   - {fileID: 0}
@@ -1402,6 +1406,7 @@ MonoBehaviour:
   animationDuration: 0.25
   imageSpacing: 0
   animationEase: 9
+  direction: 0
 --- !u!1 &1248439719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,6 +1794,7 @@ GameObject:
   - component: {fileID: 1876461247}
   - component: {fileID: 1876461246}
   - component: {fileID: 1876461245}
+  - component: {fileID: 1876461248}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1898,6 +1904,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876461243}
   m_CullTransparentMesh: 1
+--- !u!114 &1876461248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876461243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae93d12679003cd4da469523aea1e9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  QuickAccessSelector: {fileID: 0}
 --- !u!1 &1882210165
 GameObject:
   m_ObjectHideFlags: 0

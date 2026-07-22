@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset inputActions;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] public InputActionAsset inputActions;
+    [SerializeField] private InputSystemUIInputModule uiInputModule;
+
+    private InputActionReference navigationAction;
 
     public static InputManager Instance { get; private set; }
 
@@ -12,26 +16,55 @@ public class InputManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
+
         Instance = this;
 
+        if (uiInputModule == null && EventSystem.current != null)
+        {
+            EventSystem.current.TryGetComponent(out uiInputModule);
+        }
+
+        if (uiInputModule == null)
+        {
+            Debug.LogError(
+                "An InputSystemUIInputModule must be assigned.",
+                this);
+            return;
+        }
+
+        navigationAction = uiInputModule.move;
     }
 
     public void EnablePlayerActionMap()
     {
         inputActions.FindActionMap(ActionMaps.Player.PlayerActionMap).Enable();
-        // also disable UI action map
         inputActions.FindActionMap(ActionMaps.UI.UIActionMap).Disable();
     }
 
     public void EnableUIActionMap()
     {
         inputActions.FindActionMap(ActionMaps.UI.UIActionMap).Enable();
-        // also disable Player action map
         inputActions.FindActionMap(ActionMaps.Player.PlayerActionMap).Disable();
     }
 
+    [ContextMenu("Disable navigation")]
+    public void DisableUINav()
+    {
+        if (uiInputModule != null)
+        {
+            uiInputModule.move = null;
+        }
+    }
 
+    [ContextMenu("Enable navigation")]
+    public void EnableUINav()
+    {
+        if (uiInputModule != null)
+        {
+            uiInputModule.move = navigationAction;
+        }
+    }
 }
