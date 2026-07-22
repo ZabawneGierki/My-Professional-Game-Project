@@ -51,10 +51,10 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         Vector2 direction = context.ReadValue<Vector2>();
         if (direction.x > 0f)
         {
-             
+
             GoRight();
         }
-        else if (direction.x  < 0f)
+        else if (direction.x < 0f)
         {
             GoLeft();
 
@@ -276,7 +276,7 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         // dehook the function from nav 
         InputManager.Instance.inputActions.FindAction("Navigate").performed -= OnNavigate;
 
-        
+
 
     }
 
