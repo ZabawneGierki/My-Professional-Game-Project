@@ -37,7 +37,7 @@ public class QuickAccessMenu : MonoBehaviour
         }
 
         quickAccessMenuAction = InputManager.Instance.inputActions.FindAction(
-            quickAccessMenuActionName,
+            ActionMaps.UI.QuickAccess,
             true);
 
         SubscribeToInput();
