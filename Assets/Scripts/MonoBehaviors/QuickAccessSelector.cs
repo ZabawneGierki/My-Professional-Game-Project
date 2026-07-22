@@ -49,12 +49,12 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
     public void OnNavigate(InputAction.CallbackContext context)
     {
         Vector2 direction = context.ReadValue<Vector2>();
-        if (direction.y > 0f)
+        if (direction.x > 0f)
         {
              
             GoRight();
         }
-        else if (direction.y < 0f)
+        else if (direction.x  < 0f)
         {
             GoLeft();
 
