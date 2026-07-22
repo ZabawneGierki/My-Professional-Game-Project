@@ -61,7 +61,7 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         }
     }
 
-    [ContextMenu("Go Left")]
+  
     public void GoLeft()
     {
         if (!CanScroll())
@@ -75,7 +75,7 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         AnimateImages(slotDistance);
     }
 
-    [ContextMenu("Go Right")]
+    
     public void GoRight()
     {
         if (!CanScroll())
