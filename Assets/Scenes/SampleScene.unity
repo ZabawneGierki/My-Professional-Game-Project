@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 109497087}
   - component: {fileID: 109497086}
   m_Layer: 5
-  m_Name: QuickAccessSelector
+  m_Name: ThirdQuickAccessSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 2
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 331053181}
   - component: {fileID: 331053182}
   m_Layer: 5
-  m_Name: QuickAccessSelector
+  m_Name: FirstQuickAccessSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 2
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 511223080}
   - component: {fileID: 511223081}
   m_Layer: 5
-  m_Name: SetupUpButton
+  m_Name: SecondSetupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1622,7 +1622,7 @@ GameObject:
   - component: {fileID: 672308968}
   - component: {fileID: 672308967}
   m_Layer: 5
-  m_Name: QuickAccessSelector
+  m_Name: FourthSetupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 2
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   animationDuration: 0.75
   imageSpacing: 0
   animationEase: 9
-  direction: 0
+  direction: 2
 --- !u!1 &766380299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1950,7 @@ GameObject:
   - component: {fileID: 833801708}
   - component: {fileID: 833801709}
   m_Layer: 5
-  m_Name: SetupUpButton
+  m_Name: ThirdSetupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2601,7 +2601,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
@@ -2661,7 +2661,7 @@ GameObject:
   - component: {fileID: 1117746856}
   - component: {fileID: 1117746855}
   m_Layer: 5
-  m_Name: QuickAccessSelector
+  m_Name: SecondQuickAccessSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2704,7 +2704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 2
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3921,7 +3921,7 @@ GameObject:
   - component: {fileID: 1876461245}
   - component: {fileID: 1876461248}
   m_Layer: 5
-  m_Name: SetupUpButton
+  m_Name: FirstSetupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4286,7 +4286,7 @@ GameObject:
   - component: {fileID: 1965636798}
   - component: {fileID: 1965636799}
   m_Layer: 5
-  m_Name: SetupUpButton
+  m_Name: FourthSetupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
