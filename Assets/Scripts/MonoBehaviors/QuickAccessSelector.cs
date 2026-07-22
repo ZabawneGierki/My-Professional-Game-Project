@@ -61,7 +61,7 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         }
     }
 
-  
+
     public void GoLeft()
     {
         if (!CanScroll())
@@ -75,7 +75,7 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         AnimateImages(slotDistance);
     }
 
-    
+
     public void GoRight()
     {
         if (!CanScroll())
@@ -287,7 +287,12 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
 
         Usable usable = GetCentralItem();
 
-        Debug.Log(usable.name);
+        ItemSpellEffect itemSpell = usable.Effect as ItemSpellEffect;
+        if (itemSpell == null) { 
+            Debug.LogError("The Usable has no Spell effect on " + direction.ToString());
+        } else {
+        
+        }
 
         senderButton.Select();
     }
