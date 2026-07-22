@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HealingPotion
   m_EditorClassIdentifier: Assembly-CSharp::Potion
   itemName: 0
+  description: healing pots
   itemSprite: {fileID: 21300000, guid: 9f9d2ff6e2d86af42a4feb0ca1d3018c, type: 3}
   SellValue: 20
   Effect: {fileID: 0}

@@ -284,6 +284,11 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
     {
         Debug.Log("Clicked.");
 
+
+        Usable usable = GetCentralItem();
+
+        Debug.Log(usable.name);
+
         senderButton.Select();
     }
 }

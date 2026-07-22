@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Baka
   m_EditorClassIdentifier: Assembly-CSharp::Usable
   itemName: 0
+  description: I am Baka!
   itemSprite: {fileID: 21300000, guid: fca10ff228f38a84d9c41fc1085bc8af, type: 3}
   SellValue: 0
   Effect: {fileID: 0}

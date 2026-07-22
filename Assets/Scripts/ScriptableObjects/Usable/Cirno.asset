@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cirno
   m_EditorClassIdentifier: Assembly-CSharp::Usable
   itemName: 0
+  description: cute fairy is shy
   itemSprite: {fileID: 21300000, guid: 618563030b8f7034d995e6f64061cb4b, type: 3}
   SellValue: 0
   Effect: {fileID: 0}
