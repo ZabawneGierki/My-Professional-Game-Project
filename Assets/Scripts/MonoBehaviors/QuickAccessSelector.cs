@@ -260,9 +260,11 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
     {
         Debug.Log("Selected button.");
         // disable nav
+        //InputManager.Instance.DisableUINav();
         
 
         // hook the function to nav
+
     }
 
     public void OnDeselect(BaseEventData eventData)

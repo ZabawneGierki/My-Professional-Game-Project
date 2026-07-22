@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,10 @@ public class SelectorButton : MonoBehaviour
 
     public void OnClick()
     {
-        // just select the button.
         QuickAccessSelector.Select();
     }
+
+
+
+    
 }
