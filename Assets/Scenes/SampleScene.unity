@@ -2254,7 +2254,6 @@ MonoBehaviour:
   down: {fileID: 11400000, guid: 387dba7c736b7b349bdb7379412bb874, type: 2}
   right: {fileID: 11400000, guid: b80c27b46b7270845a2c6690c732cb63, type: 2}
   left: {fileID: 11400000, guid: ae33abdea017a3f40819100779d43805, type: 2}
-  quickAccessMenuActionName: QuickAccess
 --- !u!1 &925845598
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,6 +4118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bf39a8db8a2a349a844c9e4dde987a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  firstSelectedButton: {fileID: 1876461245}
 --- !u!1 &1883938364
 GameObject:
   m_ObjectHideFlags: 0
