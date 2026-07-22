@@ -5,7 +5,7 @@ public class QuickAccessMenu : MonoBehaviour
 {
     public ItemSpellEffect up, down, right, left;
 
-    [SerializeField] private string quickAccessMenuActionName = "QuickAccess";
+   
 
     private InputAction quickAccessMenuAction;
 
