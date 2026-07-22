@@ -260,8 +260,9 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
     {
         Debug.Log("Selected button.");
         // disable nav
-        //InputManager.Instance.DisableUINav();
-        
+        InputManager.Instance.DisableUINav();
+
+        InputManager.Instance.inputActions.FindAction("Navigate").performed += OnNavigate;
 
         // hook the function to nav
 
@@ -270,15 +271,19 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
     public void OnDeselect(BaseEventData eventData)
     {
         // reenable nav
+        InputManager.Instance.EnableUINav();
 
-        // dehook the function from nav
+        // dehook the function from nav 
+        InputManager.Instance.inputActions.FindAction("Navigate").performed -= OnNavigate;
+
         
-        // select the sender button
-         
+
     }
 
     public void OnClick()
     {
         Debug.Log("Clicked.");
+
+        senderButton.Select();
     }
 }
