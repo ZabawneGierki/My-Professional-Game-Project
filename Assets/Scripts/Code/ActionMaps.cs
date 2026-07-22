@@ -18,5 +18,6 @@ public static class ActionMaps
         public const string Back = "Back";
         public const string Previous = "Previous";
         public const string Next = "Next";
+        public const string QuickAccess = "QuickAccess";
     }
 }
