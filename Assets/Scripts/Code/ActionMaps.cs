@@ -13,11 +13,17 @@ public static class ActionMaps
     public static class UI
     {
         public const string UIActionMap = "UI";
-        public const string Navigate = "Navigate";
-        public const string Select = "Select";
-        public const string Back = "Back";
-        public const string Previous = "Previous";
-        public const string Next = "Next";
-        public const string QuickAccess = "QuickAccess";
+
+        
+            public const string Navigate = "Navigate";
+            public const string Select = "Select";
+            public const string Previous = "Previous";
+            public const string Next = "Next";
+            public const string QuickAccess = "QuickAccess";
+
+
+         
+        
+         
     }
 }

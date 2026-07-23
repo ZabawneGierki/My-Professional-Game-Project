@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40a30a49bee325c4aa10dd7d49d31add, type: 3}
-  m_Name: Marisa
-  m_EditorClassIdentifier: Assembly-CSharp::Usable
+  m_Name: Healing Potion
+  m_EditorClassIdentifier: Assembly-CSharp::Potion
   itemName: 0
-  description: Marisa is a cool witch!
-  itemSprite: {fileID: 21300000, guid: 8c0ab630db4caa64f88e536cea48bc31, type: 3}
-  SellValue: 0
-  Effect: {fileID: 0}
+  description: healing pots
+  itemSprite: {fileID: 21300000, guid: c2c05288d99bed9468d653ff32e96532, type: 3}
+  SellValue: 20
+  Effect: {fileID: 11400000, guid: f72d82a3b9777794b9af6b9acbc51e08, type: 2}

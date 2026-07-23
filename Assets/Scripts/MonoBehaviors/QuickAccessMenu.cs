@@ -1,31 +1,51 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class QuickAccessMenu : MonoBehaviour
 {
-    public ItemSpellEffect up, down, right, left;
+
+    [SerializeField] Image FirstImage, SecondImage, ThirdImage, LastImage;
+
+    public Usable first, second, third, last;
+    //public ItemSpellEffect up, down, right, left;
 
    
 
     private InputAction quickAccessMenuAction;
 
-    public void AssignMiniSpell(Direction direction, ItemSpellEffect miniSpell)
+    private void Awake()
+    {
+
+        
+    }
+    private void AssignImageSprites()
+    {
+        FirstImage.sprite = first.itemSprite;
+        SecondImage.sprite = second.itemSprite;
+        ThirdImage.sprite = third.itemSprite;
+        LastImage.sprite = last.itemSprite;
+    }
+    public void AssignMiniSpell(Direction direction, Usable usable)
     {
         switch (direction)
         {
             case Direction.Up:
-                up = miniSpell;
+                first = usable;
                 break;
             case Direction.Down:
-                down = miniSpell;
+                third = usable;
                 break;
             case Direction.Left:
-                left = miniSpell;
+                last = usable;
                 break;
             case Direction.Right:
-                right = miniSpell;
+                second = usable;
                 break;
         }
+
+        AssignImageSprites();
     }
 
     private void Start()
@@ -41,6 +61,9 @@ public class QuickAccessMenu : MonoBehaviour
             true);
 
         SubscribeToInput();
+
+        AssignImageSprites();
+
     }
 
     private void OnEnable()
@@ -75,20 +98,21 @@ public class QuickAccessMenu : MonoBehaviour
         {
             if (direction.y > 0f)
             {
-                up?.Cast();
+                 
+                first.Effect.Cast();
             }
             else if (direction.y < 0f)
             {
-                down?.Cast();
+                third.Effect.Cast();
             }
         }
         else if (direction.x < 0f)
         {
-            left?.Cast();
+            last.Effect.Cast();
         }
         else if (direction.x > 0f)
         {
-            right?.Cast();
+            second.Effect.Cast();
         }
     }
 }

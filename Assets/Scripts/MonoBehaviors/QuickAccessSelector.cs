@@ -13,6 +13,8 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
 
     [SerializeField] Button senderButton; // a button we will back to after selecting the Usable.
 
+    [SerializeField] QuickAccessMenu menuReference;
+
     [SerializeField] private List<Usable> usables = new List<Usable>();
     private Usable[] quickAccessSlots = new Usable[SlotCount];
     [SerializeField] private Image[] images = new Image[SlotCount];
@@ -264,7 +266,7 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
 
         InputManager.Instance.inputActions.FindAction("Navigate").performed += OnNavigate;
 
-        // hook the function to nav
+        
 
     }
 
@@ -291,6 +293,9 @@ public class QuickAccessSelector : MonoBehaviour, ISelectHandler, IDeselectHandl
         if (itemSpell == null) { 
             Debug.LogError("The Usable has no Spell effect on " + direction.ToString());
         } else {
+
+            menuReference.AssignMiniSpell(direction, usable);
+             
         
         }
 
